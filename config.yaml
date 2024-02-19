@@ -180,7 +180,7 @@ params:
         #   enable: true
         #   name: "View the project"
         #   url: "https://example.com"
-        content: "Trabalhei e acompanhei projetos que envovliam: Análises de Dados, Desenvolvimento, Desenvolvimento de KPI'S, Análises Estatísticas, Limpeza e Filtragem de dados, Estatística Descritiva, "
+        content: "Trabalhei e acompanhei projetos que envovliam: Análises de Dados, Desenvolvimento, Desenvolvimento de KPI'S, Análises Estatísticas, Limpeza e Filtragem de dados e Estatística Descritiva "
 
       - job: "Estágio(Menor Aprendiz) Programador de Sistemas"
         company: "Grupo RBS"
@@ -193,7 +193,7 @@ params:
         #   enable: true
         #   content: I worked as a software developer for more than one year in Amazon.
         content: |
-          Atuei como fullstack, tendo uma preve introdução e desenvolvimento em várias áreas, as quais eu gostei de me aprofundar mais nos ensinamentos Estatísticos que envolviam R, Python e relacionados a BI.
+          Atuei como fullstack, tendo uma breve introdução e desenvolvimento em diversas áreas, nas quais eu gostei de me aprofundar mais nos ensinamentos estatísticos que as envolviam, como: R, Python e relacionados a BI.
       ####### AQUI ESTÃO OS OUTROS CASO QUEIRA ADICIONAR OUTRO EMPREGO ######    
       # - job: "Junior Software Developer"
       #   company: "Apple"
