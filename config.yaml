@@ -172,7 +172,7 @@ params:
     enable: true
     title: "Experiências"
     items:
-      - job: "Estágio em Ciência de DADOS"
+      - job: "Estágio em Ciência de Dados"
         company: "Evcomx"
         companyUrl: "https://evcomx.com.br/"
         date: "jun de 2022 - jul de 2023"
