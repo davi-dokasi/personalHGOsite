@@ -1,0 +1,402 @@
+baseURL: "https://hugo-profile.netlify.app"
+languageCode: "en-us"
+title: "Davi Augusto"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+
+##### MENUS PARA BLOG ETC ##########
+# Menus:
+#   main:
+#     - identifier: blog
+#       name: Blog
+#       title: Blog posts
+#       url: /blogs
+#       weight: 1
+#     - identifier: gallery
+#       name: Galeria
+#       title: Blog posts
+#       url: /gallery
+#       weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Davi Augusto"
+  #description: 
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/logo.jpg"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+  
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # color:
+  #   textColor:
+  #   secondaryTextColor:
+  #   backgroundColor:
+  #   secondaryBackgroundColor:
+  #   primaryColor:
+  #   secondaryColor:
+
+  #   darkmode:
+  #     textColor:
+  #     secondaryTextColor:
+  #     backgroundColor:
+  #     secondaryBackgroundColor:
+  #     primaryColor:
+  #     secondaryColor:
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Davi Silva" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Olá! Me chamo" #Hi! My name is -- ORIGINAL 
+    title: "Davi Augusto." # Meu nome aqui --
+    subtitle: "Eu faço data science" ## Descriçãozinha --
+    content: "Apaixonado por Estatística, tecnologia e ciência de dados! Atualmente cursando Estatística na UFRGS, com objetivo de me especializar na área de Ciência de Dados"
+    image: /images/me_first.jpeg
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    # button:
+    #   enable: true
+    #   name: "Resume"
+    #   url: "#"
+    #   download: true
+    #   newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/davi-dokasi
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/davi-a-681510129/
+      # customIcons:
+      #   - icon: /fav.png
+      #     url: "https://example.com"
+
+  # About
+  about:
+    enable: true
+    title: "Sobre Mim"
+    image: "/images/mes_two.jpeg"
+    content: |-
+      Sou estudante de estatística na UFRGS. Atuei em estágios em data science e programação. Atualmente a procura de estágio, participo de projetos acadêmicos e procuro aprofundar meus estudos na área de data science. 
+    skills:
+      enable: true
+      title: "Aqui estão algumas coisas nas quais venho trabalhado recentemente:" # --Here are a few technologies I've been working with recently:
+      items:
+        - "Python"
+        - "R"
+        - "SQL"
+        - "Análise Exploratória"
+        - "Bancos de Dados"
+        - "Estatística"
+
+  # Experience
+  experience: 
+    enable: true
+    title: "Experiências"
+    items:
+      - job: "Estágio em Ciência de DADOS"
+        company: "Evcomx"
+        companyUrl: "https://evcomx.com.br/"
+        date: "jun de 2022 - jul de 2023"
+        # featuredLink:
+        #   enable: true
+        #   name: "View the project"
+        #   url: "https://example.com"
+        content: "Trabalhei e acompanhei projetos que envovliam: Análises de Dados, Desenvolvimento, Desenvolvimento de KPI'S, Análises Estatísticas, Limpeza e Filtragem de dados, Estatística Descritiva, "
+
+      - job: "Estágio(Menor Aprendiz) Programador de Sistemas"
+        company: "Grupo RBS"
+        companyUrl: "https://www.gruporbs.com.br/"
+        date: "nov de 2019 - mai de 2022"
+        # featuredLink:
+        #   enable: true
+        #   url: "https://example.com"
+        # info:
+        #   enable: true
+        #   content: I worked as a software developer for more than one year in Amazon.
+        content: |
+          Atuei como fullstack, tendo uma preve introdução e desenvolvimento em várias áreas, as quais eu gostei de me aprofundar mais nos ensinamentos Estatísticos que envolviam R, Python e relacionados a BI.
+      ####### AQUI ESTÃO OS OUTROS CASO QUEIRA ADICIONAR OUTRO EMPREGO ######    
+      # - job: "Junior Software Developer"
+      #   company: "Apple"
+      #   companyUrl: "https://example.com"
+      #   date: "Jan 2020 - Aug 2020"
+      #   info:
+      #     enable: false
+      #   featuredLink:
+      #     enable: true
+      #     url: "https://example.com"
+      #   content: |
+      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+      #     - Lead backend developer for a product.
+      #     - Created a frontend design for a product.
+
+      # - job: "UI/UX Designer"
+      #   company: "Netflix"
+      #   companyUrl: "https://example.com"
+      #   date: "June 2017 - Nov 2019"
+      #   featuredLink:
+      #     enable: true
+      #     url: "https://example.com"
+      #   content: |
+      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+      #     - Lead backend developer for a product.
+      #     - Created a frontend design for a product.
+
+      # - job: "Product Designer"
+      #   company: "Google"
+      #   companyUrl: "https://example.com"
+      #   date: "Feb 2016 - Mar 2017"
+      #   content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  # Education
+  education:
+    enable: true
+    title: "Educação"
+    index: false
+    items:
+      - title: "Estatística - Bacharelado"
+        school:
+          name: "UFRGS (Universidade Federal do Rio Grande do Sul)"
+          url: "http://www.ufrgs.br/ufrgs/inicial"
+        date: "mai de 2023 - set de 2028(estimativa)"
+        # GPA: "3.8 out of 5.0"
+        content: |-
+          Atividades Extracurrículares
+            - Semanística
+      - title: "Inglês Avançado"
+        school:
+          name: "Escolas New Point"
+          url: "https://escolasnewpoint.com.br/?fbclid=IwAR0KnCmLGTX7G7czQOysWEuAAP6hveNUsMnjTnHoJ3DRSx2Oy_y-hO7MhWA"
+        # date: "2009 - 2013"
+        # GPA: "3.9 out of 5.0"
+        # content: |-
+        #   I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+        #   - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+        #   - Face mask detection using a single convolutional neural network.
+
+        #   Extracurricular Activities
+        #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        # featuredLink:
+        #   enable: true
+        #   name: "My academic record"
+        #   url: "https://example.com"
+      # - title: "High School"
+      #   school:
+      #     name: "Thomas Jefferson High School for Science and Technology."
+      #     url: "https://example.org"
+      #   GPA: "4.2 out of 5.0"
+      #   featuredLink:
+      #     enable: true
+      #     url: "https://example.com"
+
+  ############# Achievements ###################
+  # achievements:
+  #   enable: true
+  #   # title: "Custom Name"
+  #   items:
+  #     - title: Google kickstart runner
+  #       content: I solved all problems with optimal solution.
+  #       url: https://example.com
+  #       image: /images/achievment.jpg
+  #     - title: Facebook Hackathon Winner
+  #       content: Developed a product using Artificial Intelligence.
+  #       image: /images/achievment.jpg
+  #     - title: Hugo Profile
+  #       content: Developed a theme and getting 1K+ downloads per month.
+  #       url: "https://github.com/gurusabarish/hugo-profile"
+  #       image: /images/achievment.jpg
+  #     - title: Microsoft Imagine Runner
+  #       content: We are developed a product which can help others.
+  #     - title: Google Summer of Code
+  #       content: Contributed to a open source project.
+  #       url: https://example.com
+
+  ####################  projects ########################
+  projects:
+    enable: true
+    title: "Projetos"
+    items:
+      - title: Análises com o Dataset Palmer Penguins
+        content: "Projeto com testes de hipótese (para uma população), utilizando: R, estatística descritiva, intervalo de confiança, bootstrap. "
+        image: /images/projects/culmen_depth.png
+        featured:
+          name: Veja
+          link: https://nimrodds.quarto.pub/club-penguin-palmer-penguins/#/title-slide
+        badges:
+          - "Acadêmicos"
+          - "Análises"
+          - "R"
+          - "Estatística"
+          - "Quarto"
+          - "Bootstrap"
+        links:
+          # - icon: fa fa-envelope
+          #   url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          - icon: fab fa-github
+            url: https://github.com/davi-dokasi/palmer-penguins-research/tree/main
+          # - icon: fab fa-twitter
+          #   url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+
+      - title: Análise proporção de uso de celulares
+        content: "Projeto com testes de hipóteses para duas populações, utilizando: R, análises, estatística descritiva e intervalo de confiança"
+        image: /images/projects/projeto2.jpg
+        featured:
+          name: Veja
+          link: https://nimrodds.quarto.pub/estimativa-de-uso-de-celulares/#/title-slide
+        badges:
+          - "Acadêmicos"
+          - "R"
+          - "Quarto"
+          - "Estatística"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/davi-dokasi/trabalho2_inferencia
+
+      # - title: Hugo Profile V2
+      #   content: A clean and simple Hugo template for personal portfolio and blog.
+      #   image: /images/projects/profile2.jpg
+      #   featured:
+      #     name: Demo V2
+      #     link: https://hugo-profile-2.netlify.app
+      #   badges:
+      #     - "Hugo"
+      #     - "Bootstrap"
+      #     - "Javascript"
+      #   links:
+      #     - icon: fab fa-github
+      #       url: https://github.com/gurusabarish/HugoProfileV2
+
+  #Contact
+  contact:
+    enable: true
+    title: "Contatos"
+    content: Minha caixa de entrada está sempre aberta. Se você tiver uma pergunta ou apenas quiser dizer "oi", farei o meu melhor para responder!
+    email: daviaugusto2509@gmail.com
+    btnName: Me envie um e-mail
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    # recentPosts:
+    #   path: "blogs"
+    #   count: 3
+    #   title: Recent Posts
+    #   enable: true
+    #   disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/davi-dokasi
+      linkedin: https://www.linkedin.com/in/davi-a-681510129/
+      # instagram: https://instagram.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
