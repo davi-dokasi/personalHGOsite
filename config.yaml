@@ -129,7 +129,7 @@ params:
     title: "Davi Augusto." # Meu nome aqui --
     subtitle: "Eu faço data science" ## Descriçãozinha --
     content: "Apaixonado por Estatística, tecnologia e ciência de dados! Atualmente cursando Estatística na UFRGS, com objetivo de me especializar na área de Ciência de Dados"
-    image: /images/me_first.jpeg
+    image: /images/nova.jpeg
     bottomImage:
       enable: true
     # roundImage: true # Make hero image circular | default false
@@ -153,7 +153,7 @@ params:
   about:
     enable: true
     title: "Sobre Mim"
-    image: "/images/mes_two.jpeg"
+    image: "/images/me_first.jpeg"
     content: |-
       Sou estudante de estatística na UFRGS. Atuei em estágios em data science e programação. Atualmente a procura de estágio, participo de projetos acadêmicos e procuro aprofundar meus estudos na área de data science. 
     skills:
