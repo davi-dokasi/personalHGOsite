@@ -362,12 +362,12 @@ params:
     #   messageCaption: "Enter your message here"
 
   footer:
-    # recentPosts:
-    #   path: "blogs"
-    #   count: 3
-    #   title: Recent Posts
-    #   enable: true
-    #   disableFeaturedImage: false
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Postagens recentes
+      enable: true
+      disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/davi-dokasi
       linkedin: https://www.linkedin.com/in/davi-a-681510129/
