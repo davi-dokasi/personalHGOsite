@@ -387,9 +387,9 @@ params:
 
   # For translations
   terms:
-    read: "Read"
-    toc: "Table Of Contents"
-    copyright: "All rights reserved"
+    read: "Leia Aqui"
+    toc: "Conteúdos"
+    copyright: "Todos os direitos reservados."
     pageNotFound: "Page not found"
     emailText: "Check out this site"
 
