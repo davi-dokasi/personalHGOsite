@@ -454,7 +454,7 @@ RMSE[](#RMSE)
 
 Raiz do Erro Quadrático Médio.
 
-A Raiz do Erro Quadrático Médio (RMSE, do inglês Root Mean Square Error) é uma métrica utilizada para avaliar a performance de modelos de regressão. Ela é calculada a partir da diferença entre os valores reais e os valores previstos pelo modelo12.
+A Raiz do Erro Quadrático Médio (RMSE, do inglês Root Mean Square Error) é uma métrica utilizada para avaliar a performance de modelos de regressão. Ela é calculada a partir da diferença entre os valores reais e os valores previstos pelo modelo.
 
 A RMSE é a raiz quadrada do Erro Quadrático Médio (MSE, do inglês Mean Squared Error). O MSE é a média dos quadrados das diferenças (ou erros) entre os valores reais e os valores previstos1.
 

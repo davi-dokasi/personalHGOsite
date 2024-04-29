@@ -193,7 +193,7 @@ params:
         #   enable: true
         #   content: I worked as a software developer for more than one year in Amazon.
         content: |
-          Atuei como fullstack, tendo uma preve introdução e desenvolvimento em várias áreas, as quais eu gostei de me aprofundar mais nos ensinamentos Estatísticos que envolviam R, Python e relacionados a BI.
+          Atuei como fullstack, tendo uma breve introdução e desenvolvimento em várias áreas, as quais eu gostei de me aprofundar mais nos ensinamentos Estatísticos que envolviam R, Python e relacionados a BI.
       ####### AQUI ESTÃO OS OUTROS CASO QUEIRA ADICIONAR OUTRO EMPREGO ######    
       # - job: "Junior Software Developer"
       #   company: "Apple"
