@@ -13,7 +13,7 @@ language: Language
 theme_toggle: Toggle light/dark theme
 
 hero_role: Data scientist & statistician in training.
-hero_lead: I build machine learning models, statistical analyses and dashboards that turn data into decisions. At Sicredi, I apply them to social, environmental and climate risk.
+hero_lead: "I love turning real-world problems into questions that data can answer. I work end to end, from collecting and preparing data to modeling with machine learning and AI, always with statistical rigor and clear communication of results."
 cta_projects: See projects
 cta_cv: Download CV
 

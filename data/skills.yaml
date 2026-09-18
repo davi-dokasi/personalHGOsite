@@ -1,6 +1,6 @@
 # Competências da seção "Sobre mim". Cada grupo vira um bloco com chips.
 - group: { pt: Linguagens e ferramentas, en: Languages & tools }
-  items: [Python, R, SQL, Git, Jupyter, Quarto, R Markdown]
+  items: [Python, R, SQL, SAS, Databricks, Git, Jupyter, Quarto, R Markdown]
 - group: { pt: Machine learning e IA, en: Machine learning & AI }
   items: [scikit-learn, TensorFlow, Keras, PySpark, statsmodels, spaCy]
 - group: { pt: Modelagem, en: Modeling }

@@ -32,11 +32,11 @@ featured:
       pt:
         - Coleta resiliente com checkpoints atômicos que retoma de onde parou; 118 mil jogos na base curada.
         - Divisão temporal entre treino e teste e modelo de barreira (hurdle) para os 20,6% de jogos sem nenhuma avaliação.
-        - GLM Poisson contra Binomial Negativa (superdispersão, teste de razão de verossimilhanças). Próxima etapa, uma TextCNN sobre as descrições.
+        - GLM Poisson contra Binomial Negativa (superdispersão, teste de razão de verossimilhanças). Próxima etapa, a modelagem com redes neurais (RLMP).
       en:
         - Resilient collection with atomic checkpoints that resume where they stopped; 118k games in the curated dataset.
         - Time-based train/test split and a hurdle model for the 20.6% of games with no reviews at all.
-        - Poisson vs. Negative Binomial GLMs (overdispersion, likelihood-ratio test). Next step, a TextCNN on the game descriptions.
+        - Poisson vs. Negative Binomial GLMs (overdispersion, likelihood-ratio test). Next step, neural network modeling (RLMP).
     tags: [Python, Jupyter, GLM, Gradient Boosting, { pt: Coleta via API, en: API data collection }]
     links:
       - kind: code
