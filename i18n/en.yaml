@@ -41,7 +41,7 @@ code_about: davi.info()
 about_title: About me
 photo_alt: Photo of Davi Augusto smiling, wearing a brown shirt
 detect_label: data_scientist 0.97
-skills_title: Everyday toolkit
+skills_title: Skills & toolkit
 
 code_experience: df_experience.head()
 experience_title: Experience

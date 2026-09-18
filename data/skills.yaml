@@ -1,8 +1,35 @@
-- group: { pt: Linguagens, en: Languages }
-  items: [Python, R, SQL]
-- group: { pt: Machine learning e estatística, en: Machine learning & statistics }
-  items: [scikit-learn, statsmodels, GLMs, { pt: Inferência, en: Inference }, { pt: Séries temporais, en: Time series }, NLP]
+# Competências da seção "Sobre mim". Cada grupo vira um bloco com chips.
+- group: { pt: Linguagens e ferramentas, en: Languages & tools }
+  items: [Python, R, SQL, Git, Jupyter, Quarto, R Markdown]
+- group: { pt: Machine learning e IA, en: Machine learning & AI }
+  items: [scikit-learn, TensorFlow, Keras, PySpark, statsmodels, spaCy]
+- group: { pt: Modelagem, en: Modeling }
+  items:
+    - { pt: Regressão linear e logística, en: Linear & logistic regression }
+    - { pt: "GLMs (Poisson, Binomial Negativa)", en: "GLMs (Poisson, negative binomial)" }
+    - Random Forest
+    - Gradient Boosting
+    - { pt: Redes neurais, en: Neural networks }
+    - { pt: Séries temporais, en: Time series }
+    - Clustering
+    - PCA
+    - NLP
+- group: { pt: Estatística, en: Statistics }
+  items:
+    - { pt: Inferência, en: Inference }
+    - { pt: Testes de hipótese, en: Hypothesis testing }
+    - Bootstrap
+    - { pt: Amostragem, en: Sampling }
+    - { pt: Análise multivariada, en: Multivariate analysis }
+    - { pt: Estatística espacial, en: Spatial statistics }
+- group: { pt: Soluções, en: Solutions }
+  items:
+    - { pt: Modelos preditivos, en: Predictive models }
+    - Forecasting
+    - Dashboards
+    - KPIs
+    - { pt: Automação de rotinas, en: Process automation }
+    - { pt: Coleta de dados via API, en: API data collection }
+    - { pt: Apps de dados, en: Data apps }
 - group: { pt: Dados e visualização, en: Data & visualization }
   items: [pandas, NumPy, Matplotlib, Seaborn, Plotly, ggplot2, Streamlit]
-- group: { pt: Ferramentas, en: Tools }
-  items: [Git, Jupyter, Quarto, R Markdown]

@@ -42,43 +42,6 @@ featured:
       - kind: code
         url: https://github.com/davi-dokasi/steam-popularity-prediction
 
-  - title:
-      pt: Encalhes de tartaruga-oliva no litoral gaúcho
-      en: Olive ridley sea turtle strandings in southern Brazil
-    kicker:
-      pt: Assessoria estatística · NAE/UFRGS
-      en: Statistical consulting · NAE/UFRGS
-    summary:
-      pt: Assessoria para uma pesquisa do Ceclimar/UFRGS sobre três décadas de encalhes de *Lepidochelys olivacea* no litoral norte do RS, investigando tendência, sazonalidade, hotspots espaciais e a relação com a temperatura do mar.
-      en: Consulting for a Ceclimar/UFRGS study on three decades of *Lepidochelys olivacea* strandings on the northern coast of Rio Grande do Sul, looking at trend, seasonality, spatial hotspots and the link with sea temperature.
-    stats:
-      - value: 0.59
-        decimals: 2
-        prefix: "τ "
-        label:
-          pt: tendência de alta nos encalhes (Mann-Kendall, p < 0,001)
-          en: upward trend in strandings (Mann-Kendall, p < 0.001)
-      - value: 0.87
-        decimals: 2
-        prefix: "+"
-        suffix: " °C"
-        label:
-          pt: aquecimento da superfície do mar na costa do RS, 1982–2025
-          en: sea surface warming off the RS coast, 1982–2025
-    points:
-      pt:
-        - Tendência com Mann-Kendall, inclinação de Sen e teste de Pettitt, que aponta quebra de patamar em 2011.
-        - Sazonalidade por decomposição clássica (com STL como checagem) e hotspots por estimativa de densidade kernel.
-        - Regressão binomial negativa com anomalia térmica, tudo em relatórios reprodutíveis em R Markdown.
-      en:
-        - Trend analysis with Mann-Kendall, Sen's slope and the Pettitt test, which finds a level shift in 2011.
-        - Seasonality via classical decomposition (checked with STL) and hotspots via kernel density estimation.
-        - Negative binomial regression with thermal anomaly, all in reproducible R Markdown reports.
-    tags: [R, R Markdown, { pt: Séries temporais, en: Time series }, { pt: Estatística espacial, en: Spatial statistics }, leaflet]
-    links:
-      - kind: code
-        url: https://github.com/davi-dokasi/consultoria-tamar
-
 more:
   - icon: penguin
     title:

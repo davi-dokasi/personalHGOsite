@@ -19,6 +19,6 @@ info:
   - key: stack
     value: "Python · R · SQL"
   - key: { pt: foco, en: focus }
-    value: { pt: "ML · inferência · séries", en: "ML · inference · time series" }
+    value: { pt: "Data Science · ML · IA · ML Engineering", en: "Data Science · ML · AI · ML Engineering" }
   - key: { pt: idiomas, en: languages }
     value: { pt: "português · inglês", en: "Portuguese · English" }

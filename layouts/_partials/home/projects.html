@@ -5,9 +5,10 @@
   <div class="container">
     {{- partial "section-head.html" (dict "n" 3 "code" (T "code_projects") "title" (T "projects_title") "lead" (T "projects_lead") "id" "projects-title") }}
 
-    <div class="featured">
+    {{- $single := eq (len $pr.featured) 1 }}
+    <div class="featured{{ if $single }} featured--single{{ end }}">
       {{- range $pr.featured }}
-      <article class="project project--featured" data-reveal>
+      <article class="project project--featured{{ if $single }} project--wide{{ end }}" data-reveal>
         <header class="project__head">
           <p class="project__kicker">{{ partial "tr.html" .kicker }}</p>
           {{- with .status }}<span class="badge badge--live"><span class="live-dot" aria-hidden="true"></span>{{ partial "tr.html" . }}</span>{{ end }}

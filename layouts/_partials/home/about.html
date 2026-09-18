@@ -36,16 +36,18 @@
         </div>
         <div class="skills" data-reveal>
           <h3 class="skills__title">{{ T "skills_title" }}</h3>
-          {{- range hugo.Data.skills }}
-          <div class="skills__group">
-            <h4 class="skills__label">{{ partial "tr.html" .group }}</h4>
-            <ul class="chips">
-              {{- range .items }}
-              <li class="chip">{{ partial "tr.html" . }}</li>
-              {{- end }}
-            </ul>
+          <div class="skills__grid">
+            {{- range hugo.Data.skills }}
+            <div class="skills__group">
+              <h4 class="skills__label">{{ partial "tr.html" .group }}</h4>
+              <ul class="chips">
+                {{- range .items }}
+                <li class="chip">{{ partial "tr.html" . }}</li>
+                {{- end }}
+              </ul>
+            </div>
+            {{- end }}
           </div>
-          {{- end }}
         </div>
       </div>
     </div>
