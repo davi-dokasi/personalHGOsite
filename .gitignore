@@ -1,0 +1,10 @@
+# Saída do Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

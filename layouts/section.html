@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{- $b := partial "blog-posts.html" . }}
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow"><span class="eyebrow__prompt">In&nbsp;[1]:</span> <code>{{ T "code_blog" }}</code></p>
+    <h1 class="page-title">{{ .Title }}</h1>
+    <p class="section-lead">{{ T "blog_lead" }}</p>
+    {{- if $b.fallback }}<p class="note">{{ T "blog_pt_note" }}</p>{{ end }}
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="container">
+    <div class="post-list">
+      {{- range $b.posts }}
+      {{- partial "post-card.html" (dict "page" . "heading" "h2") }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{ end }}

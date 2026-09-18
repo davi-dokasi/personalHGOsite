@@ -1,0 +1,18 @@
+{{- /* Alterna entre PT e EN. Se a página não tem tradução (ex.: um post só em
+       português), leva para a seção equivalente ou para a home do outro idioma. */ -}}
+{{- $page := . -}}
+{{- $cur := site.Language.Lang -}}
+<div class="lang-switch" role="group" aria-label="{{ T "language" }}">
+  {{- range hugo.Sites }}
+  {{- $site := . }}
+  {{- $lang := .Language.Lang }}
+  {{- if eq $lang $cur }}
+  <span class="lang-switch__item is-current" aria-current="true" lang="{{ .Language.Locale }}" title="{{ .Language.Label }}">{{ upper $lang }}</span>
+  {{- else }}
+  {{- $target := .Home.RelPermalink }}
+  {{- with $page.Section }}{{ with $site.GetPage (printf "/%s" .) }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+  {{- range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+  <a class="lang-switch__item" href="{{ $target }}" hreflang="{{ .Language.Locale }}" lang="{{ .Language.Locale }}" title="{{ .Language.Label }}">{{ upper $lang }}</a>
+  {{- end }}
+  {{- end }}
+</div>

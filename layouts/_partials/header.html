@@ -1,0 +1,33 @@
+{{- $home := site.Home.RelPermalink -}}
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ $home }}" aria-label="{{ hugo.Data.profile.name }} · {{ T "home" }}">
+      {{- partial "logo.html" . -}}
+      <span class="brand__name">{{ hugo.Data.profile.name }}</span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ T "nav_label" }}" data-nav>
+      <ul class="site-nav__list">
+        {{- range slice "about" "experience" "projects" "education" }}
+        <li><a class="site-nav__link" href="{{ if not $.IsHome }}{{ $home }}{{ end }}#{{ . }}" data-spy="{{ . }}">{{ T (printf "nav_%s" .) }}</a></li>
+        {{- end }}
+        {{- with site.GetPage "/blog" }}
+        <li><a class="site-nav__link{{ if eq $.Section "blog" }} is-active{{ end }}" href="{{ .RelPermalink }}"{{ if eq $.Section "blog" }} aria-current="page"{{ end }}>{{ T "nav_blog" }}</a></li>
+        {{- end }}
+        <li><a class="site-nav__link" href="{{ if not .IsHome }}{{ $home }}{{ end }}#contact" data-spy="contact">{{ T "nav_contact" }}</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__tools">
+      {{- partial "lang-switch.html" . }}
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="{{ T "theme_toggle" }}" title="{{ T "theme_toggle" }}">
+        <span class="theme-icon theme-icon--sun">{{ partial "icon.html" "sun" }}</span>
+        <span class="theme-icon theme-icon--moon">{{ partial "icon.html" "moon" }}</span>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="{{ T "menu" }}">
+        <span class="nav-toggle__open">{{ partial "icon.html" "menu" }}</span>
+        <span class="nav-toggle__close">{{ partial "icon.html" "close" }}</span>
+      </button>
+    </div>
+  </div>
+</header>

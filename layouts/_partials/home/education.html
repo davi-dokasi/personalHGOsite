@@ -1,0 +1,47 @@
+{{- $ed := hugo.Data.education -}}
+{{- $d := $ed.degree -}}
+<section class="section section--alt" id="education" aria-labelledby="education-title">
+  <div class="container">
+    {{- partial "section-head.html" (dict "n" 4 "code" (T "code_education") "title" (T "education_title") "id" "education-title") }}
+    <div class="education">
+      <article class="degree" data-reveal>
+        <div class="degree__icon" aria-hidden="true">{{ partial "icon.html" "cap" }}</div>
+        <p class="degree__when"><time datetime="{{ $d.start }}">{{ partial "month.html" $d.start }}</time> – <time datetime="{{ $d.end }}">{{ partial "month.html" $d.end }}</time> <span class="degree__expected">({{ T "expected" }})</span></p>
+        <h3 class="degree__title">{{ partial "tr.html" $d.course }}</h3>
+        <p class="degree__school"><strong>{{ $d.school }}</strong> · {{ partial "tr.html" $d.schoolFull }}</p>
+        <ul class="degree__list">
+          {{- range partial "tr.html" $d.highlights }}
+          <li>{{ . | markdownify }}</li>
+          {{- end }}
+        </ul>
+      </article>
+
+      {{- with $ed.photo }}
+      <figure class="edu-photo" data-reveal>
+        <picture>
+          <source srcset="{{ .webp | relURL }}" type="image/webp">
+          <img src="{{ .jpg | relURL }}" width="{{ .width }}" height="{{ .height }}" alt="{{ partial "tr.html" .alt }}" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>{{ partial "tr.html" .caption }}</figcaption>
+      </figure>
+      {{- end }}
+
+      <div class="courses courses--wide" data-reveal>
+        <h3 class="courses__title">{{ T "courses_title" }}</h3>
+        <ol class="courses__list">
+          {{- range $ed.courses }}
+          <li class="course">
+            <p class="course__title">{{ partial "tr.html" .title }}</p>
+            <p class="course__meta">
+              <span>{{ partial "tr.html" .org }}</span>
+              {{- with .hours }}<span>{{ T "hours" (int .) }}</span>{{ end }}
+              {{- with .date }}<span><time datetime="{{ . }}">{{ partial "month.html" . }}</time></span>{{ end }}
+              {{- with .period }}<span>{{ . }}</span>{{ end }}
+            </p>
+          </li>
+          {{- end }}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

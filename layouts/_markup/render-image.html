@@ -1,0 +1,14 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $img := "" -}}
+{{- if not $u.IsAbs }}{{ $img = .Page.Resources.Get $u.Path }}{{ end -}}
+{{- $src := .Destination -}}
+{{- $attrs := "" -}}
+{{- with $img }}{{ $src = .RelPermalink }}{{ if in (slice "image/png" "image/jpeg" "image/gif" "image/webp") .MediaType.Type }}{{ $attrs = printf ` width="%d" height="%d"` .Width .Height }}{{ end }}{{ end -}}
+{{- if .IsBlock -}}
+<figure class="figure">
+  <img src="{{ $src }}"{{ $attrs | safeHTMLAttr }} alt="{{ .PlainText }}" loading="lazy" decoding="async">
+  {{- with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
+<img src="{{ $src }}"{{ $attrs | safeHTMLAttr }} alt="{{ .PlainText }}" loading="lazy" decoding="async">
+{{- end -}}

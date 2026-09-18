@@ -1,0 +1,99 @@
+# Interface strings in English.
+skip: Skip to content
+home: Home
+nav_label: Main navigation
+nav_about: About
+nav_experience: Experience
+nav_projects: Projects
+nav_education: Education
+nav_blog: Blog
+nav_contact: Contact
+menu: Menu
+language: Language
+theme_toggle: Toggle light/dark theme
+
+hero_role: Data scientist & statistician in training.
+hero_lead: I build machine learning models, statistical analyses and dashboards that turn data into decisions. At Sicredi, I apply them to social, environmental and climate risk.
+cta_projects: See projects
+cta_cv: Download CV
+
+lab_label: Interactive machine learning lab
+lab_models: Choose a model
+lab_regression: Linear regression
+lab_kmeans: K-means
+lab_hint_regression: Click to add points · drag to move them
+lab_hint_kmeans: Click to add points
+lab_add: Add point
+lab_reset: New data
+lab_desc_regression: Interactive scatter plot where a regression line is fitted to the points by gradient descent.
+lab_desc_kmeans: Interactive scatter plot where the k-means algorithm groups the points into three clusters.
+lab_epoch: epoch
+lab_iter: iteration
+lab_inertia: inertia
+lab_converged: converged
+lab_data: data
+lab_model: model
+lab_loss: loss (MSE)
+lab_cluster: cluster
+lab_centroid: centroid
+
+code_about: davi.info()
+about_title: About me
+photo_alt: Photo of Davi Augusto smiling, wearing a brown shirt
+detect_label: data_scientist 0.97
+skills_title: Everyday toolkit
+
+code_experience: df_experience.head()
+experience_title: Experience
+experience_lead: Four companies since 2019, from full-stack development to data science.
+timeline_caption: Timeline of work experience and education
+timeline_hint: Hover or tab through the bars to see the details.
+legend_work: Work
+legend_edu: Education
+today: today
+present: present
+
+code_projects: projects.nlargest(5, "impact")
+projects_title: Projects
+projects_lead: From data collection to communicating results, some of what I've been building.
+link_code: Code
+link_slides: Slides
+more_projects: More projects
+github_more: More on GitHub
+github_all: See all repositories
+
+code_education: history = davi.fit(courses)
+education_title: Education
+expected: expected
+courses_title: Courses & certificates
+hours: "{{ .Count }} h"
+
+code_blog: blog.head()
+blog_title: Blog
+blog_lead: Notes on statistics and data science, with code.
+blog_pt_note: Posts are written in Portuguese.
+read_post: Read post
+all_posts: See all posts
+reading_time: "{{ .Count }} min read"
+toc: In this post
+back_blog: Back to blog
+anchor_link: Link to this section
+
+code_contact: davi.contact(subject="opportunity")
+contact_title: Let's talk
+contact_lead: I'm open to conversations about data, statistics and data science opportunities. The fastest way to reach me is email or LinkedIn.
+send_email: Send email
+copy_email: Copy email
+copied: Copied!
+
+footer_tagline: Data scientist based in Porto Alegre, Brazil.
+footer_built: Built with Hugo, hosted on Netlify.
+footer_joke: No p-values were hacked in the making of this site.
+back_top: Back to top
+
+notfound_title: Outlier detected
+notfound_text: The page you're looking for is way outside the confidence interval. The link may be wrong, or the page was removed.
+notfound_home: Back home
+
+copy_code: Copy
+code_copied: Copied

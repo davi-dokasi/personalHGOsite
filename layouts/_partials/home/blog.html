@@ -1,0 +1,17 @@
+{{- $b := partial "blog-posts.html" . -}}
+{{- with $b.posts }}
+<section class="section" id="blog" aria-labelledby="blog-title">
+  <div class="container">
+    {{- partial "section-head.html" (dict "n" 5 "code" (T "code_blog") "title" (T "blog_title") "lead" (T "blog_lead") "id" "blog-title") }}
+    {{- if $b.fallback }}<p class="note" data-reveal>{{ T "blog_pt_note" }}</p>{{ end }}
+    <div class="post-list">
+      {{- range first 3 . }}
+      {{- partial "post-card.html" (dict "page" . "heading" "h3") }}
+      {{- end }}
+    </div>
+    {{- with site.GetPage "/blog" }}
+    <p class="section-more" data-reveal><a class="text-link" href="{{ .RelPermalink }}">{{ T "all_posts" }}{{ partial "icon.html" "arrow-right" }}</a></p>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

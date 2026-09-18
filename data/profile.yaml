@@ -1,0 +1,28 @@
+# Dados pessoais usados no site inteiro (links, contato, foto, CV).
+name: Davi Augusto
+fullName: Davi Augusto Farinela da Silva
+email: daviaugusto2509@gmail.com
+location: Porto Alegre, RS
+github:
+  user: davi-dokasi
+  url: https://github.com/davi-dokasi
+linkedin: https://www.linkedin.com/in/davi-augusto-silva/
+
+photo:
+  jpg: img/davi.jpg
+  webp: img/davi.webp
+  width: 600
+  height: 800
+  # Caixa de "detecção de rosto" sobre a foto, em % da imagem.
+  # Se trocar a foto, ajuste para enquadrar o rosto.
+  box: { left: 28, top: 26, width: 45, height: 42 }
+
+# PDFs em static/cv/. Para atualizar o currículo, basta substituir o arquivo.
+cv:
+  pt: cv/Davi_Augusto_CV_PT.pdf
+  en: cv/Davi_Augusto_CV_EN.pdf
+
+# Linha "Atualmente" do topo da página
+now:
+  pt: Atualmente no Sicredi · Porto Alegre, RS
+  en: Currently at Sicredi · Porto Alegre, Brazil

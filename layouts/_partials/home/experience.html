@@ -1,0 +1,98 @@
+{{- $lang := site.Language.Lang -}}
+{{- /* ---------- Linha do tempo (Gantt) ----------
+     Eixo de jan/2019 a jan/2027. Barras posicionadas em % a partir das datas,
+     calculadas no build. Trabalho e formação são as duas séries. */ -}}
+{{- $y0 := 2019 -}}{{- $y1 := 2027 -}}
+{{- $t0 := (time.AsTime (printf "%d-01-01" $y0)).Unix -}}
+{{- $span := float (sub (time.AsTime (printf "%d-01-01" $y1)).Unix $t0) -}}
+{{- $nowU := now.Unix -}}
+{{- $rows := slice -}}
+{{- range hugo.Data.experience -}}
+  {{- $rows = $rows | append (dict "label" (.short | default .company) "start" .start "end" .end "kind" "work"
+      "anchor" (printf "job-%s" (urlize .company))
+      "detail" (printf "%s · %s (%s)" .company (partial "tr.html" .role) (partial "tr.html" .type))) -}}
+{{- end -}}
+{{- with hugo.Data.education.degree -}}
+  {{- $rows = $rows | append (dict "label" .school "start" .start "end" .end "kind" "edu"
+      "anchor" "education" "detail" (printf "%s · %s" .school (partial "tr.html" .course))) -}}
+{{- end -}}
+{{- $rows = sort $rows "start" -}}
+
+<section class="section section--alt" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+    {{- partial "section-head.html" (dict "n" 2 "code" (T "code_experience") "title" (T "experience_title") "lead" (T "experience_lead") "id" "experience-title") }}
+
+    <figure class="timeline" data-reveal data-timeline>
+      <figcaption class="timeline__head">
+        <span class="timeline__title">{{ T "timeline_caption" }} · {{ $y0 }}–{{ sub $y1 1 }}</span>
+        <ul class="legend">
+          <li><span class="legend__swatch legend__swatch--work" aria-hidden="true"></span>{{ T "legend_work" }}</li>
+          <li><span class="legend__swatch legend__swatch--edu" aria-hidden="true"></span>{{ T "legend_edu" }}</li>
+          <li><span class="legend__swatch legend__swatch--today" aria-hidden="true"></span>{{ T "today" }}</li>
+        </ul>
+      </figcaption>
+
+      <div class="timeline__plot">
+        <div class="timeline__axis" aria-hidden="true">
+          {{- range seq $y0 (sub $y1 1) }}
+          <span class="timeline__tick" style="--x: {{ printf "%.4f" (mul 100 (div (float (sub . $y0)) (float (sub $y1 $y0)))) }}%"><span class="long">{{ . }}</span><span class="short">’{{ substr (string .) 2 }}</span></span>
+          {{- end }}
+        </div>
+        <ul class="timeline__rows">
+          {{- range $rows }}
+          {{- $s := (time.AsTime (printf "%s-01" .start)).Unix }}
+          {{- $e := $nowU }}
+          {{- with .end }}{{ $e = ((time.AsTime (printf "%s-01" .)).AddDate 0 1 0).Unix }}{{ end }}
+          {{- $left := mul 100 (div (float (sub $s $t0)) $span) }}
+          {{- $width := mul 100 (div (float (sub $e $s)) $span) }}
+          {{- $done := 100.0 }}
+          {{- if gt $e $nowU }}{{ $done = mul 100 (div (float (sub $nowU $s)) (float (sub $e $s))) }}{{ end }}
+          {{- $period := printf "%s – %s" (partial "month.html" .start) (partial "month.html" .end) }}
+          {{- if and .end (gt $e $nowU) }}{{ $period = printf "%s (%s)" $period (T "expected") }}{{ end }}
+          <li class="timeline__row">
+            <span class="timeline__label">{{ .label }}</span>
+            <span class="timeline__track">
+              <a class="timeline__bar timeline__bar--{{ .kind }}" href="#{{ .anchor }}"
+                 style="--l: {{ printf "%.4f" $left }}%; --w: {{ printf "%.4f" $width }}%; --done: {{ printf "%.2f" $done }}%"
+                 data-detail="{{ .detail }} · {{ $period }}"
+                 aria-label="{{ .detail }}, {{ $period }}"></a>
+            </span>
+          </li>
+          {{- end }}
+        </ul>
+        <span class="timeline__today" style="--xn: {{ printf "%.5f" (div (float (sub $nowU $t0)) $span) }}" aria-hidden="true"><span>{{ T "today" }}</span></span>
+      </div>
+      <p class="timeline__readout" data-timeline-readout aria-hidden="true" data-default="{{ T "timeline_hint" }}">{{ T "timeline_hint" }}</p>
+    </figure>
+
+    <ol class="jobs">
+      {{- range hugo.Data.experience }}
+      <li class="job{{ if not .end }} job--current{{ end }}" id="job-{{ urlize .company }}" data-reveal>
+        <span class="job__dot" aria-hidden="true"></span>
+        <article class="job__card">
+          <header class="job__head">
+            <div>
+              <h3 class="job__role">{{ partial "tr.html" .role }}</h3>
+              <p class="job__org"><strong>{{ .company }}</strong> <span class="job__type">{{ partial "tr.html" .type }}</span></p>
+            </div>
+            <p class="job__meta">
+              <span class="job__when"><time datetime="{{ .start }}">{{ partial "month.html" .start }}</time> – {{ with .end }}<time datetime="{{ . }}">{{ partial "month.html" . }}</time>{{ else }}{{ T "present" }}{{ end }}</span>
+              <span class="job__where">{{ partial "icon.html" "pin" }}{{ .location }}</span>
+            </p>
+          </header>
+          <ul class="job__bullets">
+            {{- range partial "tr.html" .bullets }}
+            <li>{{ . }}</li>
+            {{- end }}
+          </ul>
+          <ul class="tags" aria-label="Stack">
+            {{- range .tags }}
+            <li class="tag">{{ partial "tr.html" . }}</li>
+            {{- end }}
+          </ul>
+        </article>
+      </li>
+      {{- end }}
+    </ol>
+  </div>
+</section>

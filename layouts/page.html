@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="read-progress" data-progress aria-hidden="true"><span></span></div>
+<article class="post">
+  <header class="post__head">
+    <div class="container container--post">
+      {{- with .Parent }}
+      <a class="back-link" href="{{ .RelPermalink }}">{{ partial "icon.html" "arrow-left" }}{{ T "back_blog" }}</a>
+      {{- end }}
+      <h1 class="post__title">{{ .Title }}</h1>
+      {{- with .Description }}<p class="post__lead">{{ . }}</p>{{ end }}
+      <p class="post__meta">
+        <span>{{ partial "icon.html" "calendar" }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time></span>
+        <span>{{ partial "icon.html" "clock" }}{{ T "reading_time" .ReadingTime }}</span>
+      </p>
+      {{- with .Params.tags }}
+      <ul class="tags">{{ range . }}<li class="tag">{{ . }}</li>{{ end }}</ul>
+      {{- end }}
+    </div>
+  </header>
+
+  {{- with .Params.cover }}{{ with $.Resources.Get .image }}
+  <div class="container container--post">
+    <figure class="post__cover">
+      <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $.Params.cover.alt }}" decoding="async" fetchpriority="high">
+    </figure>
+  </div>
+  {{- end }}{{ end }}
+
+  {{- $toc := and .Params.toc (gt (len .TableOfContents) 80) }}
+  <div class="container post__layout{{ if $toc }} has-toc{{ end }}">
+    {{- if $toc }}
+    <aside class="toc" aria-label="{{ T "toc" }}">
+      <details class="toc__details" open data-toc>
+        <summary>{{ T "toc" }}</summary>
+        {{ .TableOfContents }}
+      </details>
+    </aside>
+    {{- end }}
+    <div class="prose" data-copy-label="{{ T "copy_code" }}" data-copied-label="{{ T "code_copied" }}">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <footer class="container container--post post__foot">
+    {{- with .Parent }}
+    <a class="btn btn--ghost" href="{{ .RelPermalink }}">{{ partial "icon.html" "arrow-left" }}{{ T "back_blog" }}</a>
+    {{- end }}
+    <a class="btn btn--ghost" href="{{ site.Home.RelPermalink }}#contact">{{ partial "icon.html" "mail" }}{{ T "contact_title" }}</a>
+  </footer>
+</article>
+{{ end }}

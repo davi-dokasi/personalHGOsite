@@ -1,0 +1,99 @@
+# Textos da interface em português.
+skip: Pular para o conteúdo
+home: Página inicial
+nav_label: Navegação principal
+nav_about: Sobre
+nav_experience: Experiência
+nav_projects: Projetos
+nav_education: Formação
+nav_blog: Blog
+nav_contact: Contato
+menu: Menu
+language: Idioma
+theme_toggle: Alternar tema claro/escuro
+
+hero_role: Cientista de dados & estatístico em formação.
+hero_lead: Construo modelos de machine learning, análises estatísticas e dashboards que transformam dados em decisões. No Sicredi, aplico isso a risco social, ambiental e climático.
+cta_projects: Ver projetos
+cta_cv: Baixar CV
+
+lab_label: Laboratório interativo de machine learning
+lab_models: Escolha o modelo
+lab_regression: Regressão linear
+lab_kmeans: K-means
+lab_hint_regression: Clique para adicionar pontos · arraste para mover
+lab_hint_kmeans: Clique para adicionar pontos
+lab_add: Adicionar ponto
+lab_reset: Novos dados
+lab_desc_regression: Gráfico de dispersão interativo em que uma reta de regressão é ajustada aos pontos por gradiente descendente.
+lab_desc_kmeans: Gráfico de dispersão interativo em que o algoritmo k-means agrupa os pontos em três clusters.
+lab_epoch: época
+lab_iter: iteração
+lab_inertia: inércia
+lab_converged: convergiu
+lab_data: dados
+lab_model: modelo
+lab_loss: perda (MSE)
+lab_cluster: cluster
+lab_centroid: centroide
+
+code_about: davi.info()
+about_title: Sobre mim
+photo_alt: Foto de Davi Augusto sorrindo, de camisa marrom
+detect_label: cientista_de_dados 0.97
+skills_title: Ferramentas do dia a dia
+
+code_experience: df_experiencia.head()
+experience_title: Experiência
+experience_lead: Quatro empresas desde 2019, do desenvolvimento full-stack à ciência de dados.
+timeline_caption: Linha do tempo de experiência e formação
+timeline_hint: Passe o mouse ou navegue com Tab pelas barras para ver os detalhes.
+legend_work: Trabalho
+legend_edu: Formação
+today: hoje
+present: atual
+
+code_projects: projetos.nlargest(5, "impacto")
+projects_title: Projetos
+projects_lead: Da coleta de dados à comunicação dos resultados, um pouco do que venho construindo.
+link_code: Código
+link_slides: Apresentação
+more_projects: Outros projetos
+github_more: Mais no GitHub
+github_all: Ver todos os repositórios
+
+code_education: historico = davi.fit(cursos)
+education_title: Formação
+expected: previsão
+courses_title: Cursos e certificações
+hours: "{{ .Count }} h"
+
+code_blog: blog.head()
+blog_title: Blog
+blog_lead: Notas sobre estatística e ciência de dados, com código.
+blog_pt_note: Os posts estão em português.
+read_post: Ler post
+all_posts: Ver todos os posts
+reading_time: "{{ .Count }} min de leitura"
+toc: Neste post
+back_blog: Voltar ao blog
+anchor_link: Link para esta seção
+
+code_contact: davi.contato(assunto="oportunidade")
+contact_title: Vamos conversar?
+contact_lead: Estou aberto a conversas sobre dados, estatística e oportunidades em ciência de dados. O jeito mais rápido de falar comigo é por e-mail ou LinkedIn.
+send_email: Enviar e-mail
+copy_email: Copiar e-mail
+copied: Copiado!
+
+footer_tagline: Cientista de dados em Porto Alegre, RS.
+footer_built: Feito com Hugo e hospedado na Netlify.
+footer_joke: Nenhum p-valor foi manipulado na construção deste site.
+back_top: Voltar ao topo
+
+notfound_title: Outlier detectado
+notfound_text: A página que você procurou está muito fora do intervalo de confiança. Talvez o link esteja errado, ou ela tenha sido removida.
+notfound_home: Voltar ao início
+
+copy_code: Copiar
+code_copied: Copiado

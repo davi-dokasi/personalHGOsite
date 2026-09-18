@@ -1,0 +1,80 @@
+{{- $pr := hugo.Data.projects -}}
+{{- $gh := hugo.Data.profile.github -}}
+{{- $linkLabel := dict "code" (T "link_code") "slides" (T "link_slides") -}}
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <div class="container">
+    {{- partial "section-head.html" (dict "n" 3 "code" (T "code_projects") "title" (T "projects_title") "lead" (T "projects_lead") "id" "projects-title") }}
+
+    <div class="featured">
+      {{- range $pr.featured }}
+      <article class="project project--featured" data-reveal>
+        <header class="project__head">
+          <p class="project__kicker">{{ partial "tr.html" .kicker }}</p>
+          {{- with .status }}<span class="badge badge--live"><span class="live-dot" aria-hidden="true"></span>{{ partial "tr.html" . }}</span>{{ end }}
+        </header>
+        <h3 class="project__title">{{ partial "tr.html" .title }}</h3>
+        <p class="project__summary">{{ partial "tr.html" .summary | markdownify }}</p>
+        <dl class="stats">
+          {{- range .stats }}
+          <div class="stat">
+            <dt class="stat__label">{{ partial "tr.html" .label }}</dt>
+            <dd class="stat__value">{{ .prefix }}{{ lang.FormatNumber .decimals .value }}{{ .suffix }}</dd>
+          </div>
+          {{- end }}
+        </dl>
+        <ul class="project__points">
+          {{- range partial "tr.html" .points }}
+          <li>{{ . }}</li>
+          {{- end }}
+        </ul>
+        <footer class="project__foot">
+          <ul class="tags" aria-label="Stack">
+            {{- range .tags }}<li class="tag">{{ partial "tr.html" . }}</li>{{ end }}
+          </ul>
+          <div class="project__links">
+            {{- range .links }}
+            <a class="text-link" href="{{ .url }}" target="_blank" rel="noopener">{{ partial "icon.html" (cond (eq .kind "slides") "slides" "github") }}{{ index $linkLabel .kind }}{{ partial "icon.html" "external" }}</a>
+            {{- end }}
+          </div>
+        </footer>
+      </article>
+      {{- end }}
+    </div>
+
+    <h3 class="subhead" data-reveal>{{ T "more_projects" }}</h3>
+    <div class="cards">
+      {{- range $pr.more }}
+      <article class="project project--card" data-reveal>
+        <div class="project__icon" aria-hidden="true">{{ partial "icon.html" .icon }}</div>
+        <h4 class="project__title">{{ partial "tr.html" .title }}</h4>
+        <p class="project__summary">{{ partial "tr.html" .summary | markdownify }}</p>
+        <ul class="tags" aria-label="Stack">
+          {{- range .tags }}<li class="tag">{{ partial "tr.html" . }}</li>{{ end }}
+        </ul>
+        <div class="project__links">
+          {{- range .links }}
+          <a class="text-link" href="{{ .url }}" target="_blank" rel="noopener">{{ partial "icon.html" (cond (eq .kind "slides") "slides" "github") }}{{ with .label }}{{ partial "tr.html" . }}{{ else }}{{ index $linkLabel .kind }}{{ end }}{{ partial "icon.html" "external" }}</a>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    </div>
+
+    <div class="repo-list" data-reveal>
+      <div class="repo-list__head">
+        <h3 class="subhead subhead--inline">{{ T "github_more" }}</h3>
+        <a class="text-link" href="{{ $gh.url }}?tab=repositories" target="_blank" rel="noopener">{{ T "github_all" }}{{ partial "icon.html" "arrow-right" }}</a>
+      </div>
+      <ul class="repo-list__items">
+        {{- range $pr.github }}
+        <li>
+          <a class="repo" href="{{ .url }}" target="_blank" rel="noopener">
+            <span class="repo__name">{{ partial "icon.html" "code" }}{{ partial "tr.html" .title }}</span>
+            <span class="repo__desc">{{ partial "tr.html" .desc }}</span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+</section>

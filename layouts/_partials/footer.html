@@ -1,0 +1,25 @@
+{{- $p := hugo.Data.profile -}}
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand" href="{{ site.Home.RelPermalink }}">
+        {{- partial "logo.html" . -}}
+        <span class="brand__name">{{ $p.name }}</span>
+      </a>
+      <p class="site-footer__tagline">{{ T "footer_tagline" }}</p>
+    </div>
+    <ul class="site-footer__social">
+      <li><a class="icon-btn" href="{{ $p.github.url }}" rel="me noopener" target="_blank" aria-label="GitHub">{{ partial "icon.html" "github" }}</a></li>
+      <li><a class="icon-btn" href="{{ $p.linkedin }}" rel="me noopener" target="_blank" aria-label="LinkedIn">{{ partial "icon.html" "linkedin" }}</a></li>
+      <li><a class="icon-btn" href="mailto:{{ $p.email }}" aria-label="E-mail">{{ partial "icon.html" "mail" }}</a></li>
+      {{- with site.GetPage "/blog" }}{{ with .OutputFormats.Get "rss" }}
+      <li><a class="icon-btn" href="{{ .RelPermalink }}" aria-label="RSS">{{ partial "icon.html" "rss" }}</a></li>
+      {{- end }}{{ end }}
+    </ul>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© {{ now.Year }} {{ $p.fullName }} · {{ T "footer_built" }}</p>
+    <p class="site-footer__joke">{{ T "footer_joke" }}</p>
+    <a class="site-footer__top" href="#main">{{ partial "icon.html" "arrow-up" }}<span>{{ T "back_top" }}</span></a>
+  </div>
+</footer>

@@ -1,0 +1,9 @@
+{{- /* Cabeçalho de seção no estilo de célula de notebook.
+       Parâmetros: n (número da célula), code, title, lead (opcional), id (opcional p/ aria). */ -}}
+<header class="section-head" data-reveal>
+  <p class="eyebrow"><span class="eyebrow__prompt">In&nbsp;[{{ .n }}]:</span> <code>{{ .code }}</code></p>
+  <h2 class="section-title"{{ with .id }} id="{{ . }}"{{ end }}>{{ .title }}</h2>
+  {{- with .lead }}
+  <p class="section-lead">{{ . }}</p>
+  {{- end }}
+</header>

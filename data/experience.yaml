@@ -1,0 +1,92 @@
+# Experiência profissional, da mais recente para a mais antiga.
+# Datas no formato AAAA-MM. Deixe `end` vazio para o emprego atual.
+# Campos com `pt`/`en` são traduzidos; os demais valem para os dois idiomas.
+
+- company: Sicredi
+  start: "2025-08"
+  end: ""
+  location: Porto Alegre, RS
+  role:
+    pt: Analista de Risco Social, Ambiental e Climático
+    en: Social, Environmental and Climate Risk Analyst
+  type:
+    pt: Estágio
+    en: Internship
+  bullets:
+    pt:
+      - Treinamento e refinamento de modelos de machine learning e de modelos analíticos de previsão.
+      - Automação e análise de rotinas.
+      - Análise e apresentação de dados.
+    en:
+      - Training and refinement of machine learning models and analytical forecasting models.
+      - Automation and analysis of routine processes.
+      - Data analysis and presentation.
+  tags: [Python, Machine Learning, Forecasting, { pt: Automação, en: Automation }]
+
+- company: Auroque Investimentos
+  short: Auroque          # nome curto usado na linha do tempo
+  start: "2024-08"
+  end: "2025-08"
+  location: Porto Alegre, RS
+  role:
+    pt: Inteligência de Dados
+    en: Data Intelligence
+  type:
+    pt: Estágio
+    en: Internship
+  bullets:
+    pt:
+      - Desenvolvimento e manutenção de bancos de dados, garantindo integridade e eficiência na gestão dos dados.
+      - Criação de dashboards interativos em Python e Streamlit.
+      - KPIs personalizados para monitoramento de desempenho, apoiando decisões estratégicas.
+      - Limpeza e filtragem de dados, melhorando a qualidade das bases.
+    en:
+      - Development and maintenance of databases, ensuring data integrity and management efficiency.
+      - Interactive dashboards built with Python and Streamlit.
+      - Custom KPIs for performance monitoring, supporting strategic decision-making.
+      - Data cleaning and filtering, improving overall data quality.
+  tags: [Python, Streamlit, SQL, KPIs]
+
+- company: EVCOMX
+  start: "2022-06"
+  end: "2023-07"
+  location: Porto Alegre, RS
+  role:
+    pt: Ciência de Dados
+    en: Data Science
+  type:
+    pt: Estágio
+    en: Internship
+  bullets:
+    pt:
+      - Análises em Python para identificar tendências e padrões, gerando insights para a empresa.
+      - Modelos de machine learning para predição e análise de cenários.
+      - KPIs de monitoramento de desempenho, contribuindo para a melhoria contínua dos processos.
+      - Análises estatísticas e descritivas, com limpeza e filtragem de dados.
+    en:
+      - Data analysis in Python to identify trends and patterns, generating insights for the company.
+      - Machine learning models for prediction and scenario analysis.
+      - KPIs for performance monitoring, contributing to continuous process improvement.
+      - Statistical and descriptive analysis, including data cleaning and filtering.
+  tags: [Python, Machine Learning, { pt: Estatística, en: Statistics }, KPIs]
+
+- company: Grupo RBS
+  start: "2019-11"
+  end: "2022-05"
+  location: Porto Alegre, RS
+  role:
+    pt: Programador de Sistemas
+    en: Systems Programmer
+  type:
+    pt: Aprendiz
+    en: Apprentice
+  bullets:
+    pt:
+      - Desenvolvimento full-stack com foco em soluções de análise de dados em R e Python.
+      - Relatórios e dashboards de visualização de dados com ferramentas de BI.
+      - Aplicação de técnicas estatísticas para apoiar decisões estratégicas.
+    en:
+      - Full-stack development focused on data analysis solutions in R and Python.
+      - Reports and data visualization dashboards using BI tools.
+      - Statistical techniques applied to support strategic decision-making.
+  tags: [R, Python, BI, Full-stack]

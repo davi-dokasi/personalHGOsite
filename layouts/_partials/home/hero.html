@@ -1,0 +1,56 @@
+{{- $p := hugo.Data.profile -}}
+{{- $lang := site.Language.Lang -}}
+{{- $labText := dict
+  "epoch" (T "lab_epoch") "iter" (T "lab_iter") "inertia" (T "lab_inertia")
+  "converged" (T "lab_converged") "data" (T "lab_data") "model" (T "lab_model")
+  "loss" (T "lab_loss") "cluster" (T "lab_cluster") "centroid" (T "lab_centroid")
+  "hint_regression" (T "lab_hint_regression") "hint_kmeans" (T "lab_hint_kmeans")
+  "desc_regression" (T "lab_desc_regression") "desc_kmeans" (T "lab_desc_kmeans")
+  "decimal" (cond (eq $lang "pt") "," ".")
+-}}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="hero__status"><span class="live-dot" aria-hidden="true"></span>{{ partial "tr.html" $p.now }}</p>
+      <h1 class="hero__title" id="hero-title"><span class="hero__name">{{ $p.name }}</span></h1>
+      <p class="hero__role">{{ T "hero_role" }}</p>
+      <p class="hero__lead">{{ T "hero_lead" }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">{{ T "cta_projects" }}{{ partial "icon.html" "arrow-right" }}</a>
+        <a class="btn btn--ghost" href="{{ index $p.cv $lang | relURL }}" download>{{ partial "icon.html" "download" }}{{ T "cta_cv" }} <span class="btn__meta">PDF</span></a>
+      </div>
+      <ul class="hero__social" aria-label="Links">
+        <li><a class="icon-btn icon-btn--lg" href="{{ $p.github.url }}" rel="me noopener" target="_blank" aria-label="GitHub">{{ partial "icon.html" "github" }}</a></li>
+        <li><a class="icon-btn icon-btn--lg" href="{{ $p.linkedin }}" rel="me noopener" target="_blank" aria-label="LinkedIn">{{ partial "icon.html" "linkedin" }}</a></li>
+        <li><a class="icon-btn icon-btn--lg" href="mailto:{{ $p.email }}" aria-label="E-mail">{{ partial "icon.html" "mail" }}</a></li>
+      </ul>
+    </div>
+
+    <div class="lab" data-lab data-text="{{ $labText | jsonify }}" role="group" aria-label="{{ T "lab_label" }}">
+      <div class="lab__bar">
+        <span class="lab__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="lab__file">lab.ipynb</span>
+        <div class="lab__tabs" role="radiogroup" aria-label="{{ T "lab_models" }}">
+          <button type="button" role="radio" aria-checked="true" class="lab__tab" data-lab-mode="regression">{{ T "lab_regression" }}</button>
+          <button type="button" role="radio" aria-checked="false" class="lab__tab" data-lab-mode="kmeans">{{ T "lab_kmeans" }}</button>
+        </div>
+      </div>
+      <div class="lab__cell">
+        <p class="lab__code"><span class="lab__prompt">In&nbsp;[1]:</span> <code data-lab-code>LinearRegression().fit(X, y)</code></p>
+        <div class="lab__stage">
+          <canvas class="lab__canvas" data-lab-canvas role="img" aria-label="{{ T "lab_desc_regression" }}"></canvas>
+          <noscript><p class="lab__noscript">{{ T "lab_desc_regression" }}</p></noscript>
+        </div>
+        <div class="lab__readout" data-lab-readout aria-hidden="true"></div>
+      </div>
+      <div class="lab__foot">
+        <p class="lab__hint" data-lab-hint>{{ T "lab_hint_regression" }}</p>
+        <div class="lab__actions">
+          <button type="button" class="chip-btn" data-lab-add>{{ partial "icon.html" "plus" }}<span>{{ T "lab_add" }}</span></button>
+          <button type="button" class="chip-btn" data-lab-reset>{{ partial "icon.html" "refresh" }}<span>{{ T "lab_reset" }}</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

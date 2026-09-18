@@ -1,0 +1,9 @@
+{{- /* Posts do blog no idioma atual; se não houver nenhum (ex.: site em inglês),
+       usa os posts do idioma padrão. Retorna dict com a lista e se houve fallback. */ -}}
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+{{- $fallback := false -}}
+{{- if not $posts -}}
+  {{- $posts = where (index hugo.Sites 0).RegularPages "Section" "blog" -}}
+  {{- $fallback = true -}}
+{{- end -}}
+{{- return (dict "posts" $posts.ByDate.Reverse "fallback" $fallback) -}}

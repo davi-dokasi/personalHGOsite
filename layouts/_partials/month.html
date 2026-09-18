@@ -1,0 +1,6 @@
+{{- /* "2025-08" -> "ago. 2025" (pt) / "Aug 2025" (en). String vazia -> "atual". */ -}}
+{{- $out := T "present" -}}
+{{- with . -}}
+  {{- $out = time.Format "Jan 2006" (time.AsTime (printf "%s-01" .)) -}}
+{{- end -}}
+{{- return $out -}}

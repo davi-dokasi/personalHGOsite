@@ -1,0 +1,53 @@
+{{- $p := hugo.Data.profile -}}
+{{- $a := hugo.Data.about -}}
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    {{- partial "section-head.html" (dict "n" 1 "code" (T "code_about") "title" (T "about_title") "id" "about-title") }}
+    <div class="about">
+      <div class="about__aside">
+        <figure class="portrait" data-reveal>
+          <picture>
+            <source srcset="{{ $p.photo.webp | relURL }}" type="image/webp">
+            <img src="{{ $p.photo.jpg | relURL }}" width="{{ $p.photo.width }}" height="{{ $p.photo.height }}" alt="{{ T "photo_alt" }}" loading="lazy" decoding="async">
+          </picture>
+          {{- with $p.photo.box }}
+          <span class="portrait__box" style="--bx: {{ .left }}%; --by: {{ .top }}%; --bw: {{ .width }}%; --bh: {{ .height }}%" aria-hidden="true"><span class="portrait__label">{{ T "detect_label" }}</span></span>
+          {{- end }}
+        </figure>
+
+        <div class="info-card" data-reveal>
+          <p class="info-card__prompt"><span aria-hidden="true">&gt;&gt;&gt;</span> davi.info()</p>
+          <dl class="info-card__list">
+            {{- range $a.info }}
+            <div class="info-card__row">
+              <dt>{{ partial "tr.html" .key }}</dt>
+              <dd>{{ partial "tr.html" .value }}</dd>
+            </div>
+            {{- end }}
+          </dl>
+        </div>
+      </div>
+
+      <div class="about__main">
+        <div class="about__bio" data-reveal>
+          {{- range partial "tr.html" $a.bio }}
+          <p>{{ . | markdownify }}</p>
+          {{- end }}
+        </div>
+        <div class="skills" data-reveal>
+          <h3 class="skills__title">{{ T "skills_title" }}</h3>
+          {{- range hugo.Data.skills }}
+          <div class="skills__group">
+            <h4 class="skills__label">{{ partial "tr.html" .group }}</h4>
+            <ul class="chips">
+              {{- range .items }}
+              <li class="chip">{{ partial "tr.html" . }}</li>
+              {{- end }}
+            </ul>
+          </div>
+          {{- end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

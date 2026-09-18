@@ -1,14 +1,28 @@
-{{ define "head" }}
-<meta name="description" content={{ .Site.Params.description }}>
-{{ end }}
-
-{{ define "title" }}
-{{ .Site.Title }} | {{ .Site.Params.terms.pageNotFound | default "404 page not found" }}
-{{ end }}
-
 {{ define "main" }}
-<div class="container py-5 text-center">
-    <img src="{{ .Site.Params.staticPath }}/404.png" alt='{{ .Site.Params.terms.pageNotFound | default "404 page not found" }}' class="img-fluid" width="40%">
-    <h1>{{ .Site.Params.terms.pageNotFound | default "404 page not found" }}</h1>
-</div>
+<section class="notfound">
+  <div class="container notfound__inner">
+    <svg class="notfound__plot" viewBox="0 0 320 200" role="img" aria-label="{{ T "notfound_title" }}">
+      <g class="nf-grid">
+        <path d="M30 20v150M30 170h270"/>
+        <path d="M30 128h270M30 86h270M30 44h270" opacity=".5"/>
+      </g>
+      <path class="nf-band" d="M30 124 L300 42 L300 78 L30 160Z"/>
+      <path class="nf-line" d="M30 142 L300 60"/>
+      <g class="nf-pts">
+        <circle cx="52" cy="140" r="5"/><circle cx="78" cy="127" r="5"/><circle cx="101" cy="126" r="5"/>
+        <circle cx="126" cy="113" r="5"/><circle cx="150" cy="111" r="5"/><circle cx="176" cy="96" r="5"/>
+        <circle cx="200" cy="93" r="5"/><circle cx="226" cy="84" r="5"/><circle cx="252" cy="72" r="5"/><circle cx="276" cy="70" r="5"/>
+      </g>
+      <g class="nf-outlier">
+        <path d="M262 151 V73"/>
+        <circle cx="262" cy="160" r="7"/>
+        <text x="252" y="186">404</text>
+      </g>
+    </svg>
+    <p class="eyebrow"><span class="eyebrow__prompt">Out[404]:</span> <code>p &lt; 0.001</code></p>
+    <h1 class="page-title">{{ T "notfound_title" }}</h1>
+    <p class="section-lead">{{ T "notfound_text" }}</p>
+    <p><a class="btn btn--primary" href="{{ site.Home.RelPermalink }}">{{ partial "icon.html" "arrow-left" }}{{ T "notfound_home" }}</a></p>
+  </div>
+</section>
 {{ end }}

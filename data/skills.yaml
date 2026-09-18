@@ -1,0 +1,8 @@
+- group: { pt: Linguagens, en: Languages }
+  items: [Python, R, SQL]
+- group: { pt: Machine learning e estatística, en: Machine learning & statistics }
+  items: [scikit-learn, statsmodels, GLMs, { pt: Inferência, en: Inference }, { pt: Séries temporais, en: Time series }, NLP]
+- group: { pt: Dados e visualização, en: Data & visualization }
+  items: [pandas, NumPy, Matplotlib, Seaborn, Plotly, ggplot2, Streamlit]
+- group: { pt: Ferramentas, en: Tools }
+  items: [Git, Jupyter, Quarto, R Markdown]

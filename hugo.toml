@@ -1,0 +1,60 @@
+baseURL = "https://daviafsilva.netlify.app/"
+title = "Davi Augusto"
+timeZone = "America/Sao_Paulo"
+enableRobotsTXT = true
+
+# Português na raiz (/), inglês em /en/
+defaultContentLanguage = "pt"
+defaultContentLanguageInSubdir = false
+
+# Sem páginas de tags/categorias por enquanto (só há um post)
+disableKinds = ["taxonomy", "term"]
+
+[languages]
+  [languages.pt]
+    locale = "pt-BR"
+    label = "Português"
+    title = "Davi Augusto · Cientista de Dados"
+    weight = 1
+    [languages.pt.params]
+      description = "Portfólio de Davi Augusto, cientista de dados e estudante de Estatística na UFRGS: machine learning, inferência estatística, séries temporais e dashboards."
+  [languages.en]
+    locale = "en-US"
+    label = "English"
+    title = "Davi Augusto · Data Scientist"
+    weight = 2
+    [languages.en.params]
+      description = "Portfolio of Davi Augusto, data scientist and Statistics student at UFRGS (Brazil): machine learning, statistical inference, time series and dashboards."
+      ogImage = "og-en.png"
+
+[params]
+  author = "Davi Augusto Farinela da Silva"
+  mainSections = ["blog"]
+  ogImage = "og.png"
+  # Versão do KaTeX (fórmulas nos posts com `math: true`) servida pelo jsDelivr
+  [params.katex]
+    version = "0.18.7"
+    css = "sha384-JctiRyLzXCrSoOOzFlSoWLdyzQl7OrrRnhyeBmzB6ZWtcjccUyc8lCQJqIbs3uQX"
+    js = "sha384-+7Keh381hSkXmXqnjC0JBM/kzsN6TFj+wMKychSLjTvJ8/0ElMde2uKl8i6p6Buj"
+    autoRender = "sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false
+  [markup.highlight]
+    noClasses = false
+    guessSyntax = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
+    ordered = false
+
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]
+  page = ["html"]
+
+[sitemap]
+  changeFreq = "monthly"

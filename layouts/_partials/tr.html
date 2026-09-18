@@ -1,0 +1,7 @@
+{{- /* Devolve o valor no idioma atual quando recebe um mapa {pt: ..., en: ...};
+       qualquer outro valor volta como veio. Uso: {{ partial "tr.html" .role }} */ -}}
+{{- $v := . -}}
+{{- if reflect.IsMap $v -}}
+  {{- $v = index $v site.Language.Lang | default (index $v "pt") -}}
+{{- end -}}
+{{- return $v -}}

@@ -1,17 +1,49 @@
 [build]
-command = 'hugo'
-publish = 'public'
+  publish = "public"
+  command = "hugo --gc --minify"
 
 [build.environment]
-HUGO_VERSION = '0.122.0'
+  HUGO_VERSION = "0.166.0"
+  TZ = "America/Sao_Paulo"
 
-[context]
-[context.branch-deploy]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
-
+# Pré-visualizações de PR e de outros branches usam a URL do próprio deploy
 [context.deploy-preview]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
-[context.production]
-[context.production.environment]
-HUGO_ENV = 'production'
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+# Endereços do site antigo -> novos (preserva links já compartilhados)
+[[redirects]]
+  from = "/blogs/regressao_linear/"
+  to = "/blog/regressao-linear/"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/*"
+  to = "/blog/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/gallery/"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# CSS e JS têm hash no nome (fingerprint), então podem ficar em cache "para sempre"
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

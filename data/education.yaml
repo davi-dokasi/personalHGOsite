@@ -1,0 +1,60 @@
+degree:
+  school: UFRGS
+  schoolFull:
+    pt: Universidade Federal do Rio Grande do Sul
+    en: Federal University of Rio Grande do Sul
+  course:
+    pt: Bacharelado em Estatística
+    en: B.Sc. in Statistics
+  start: "2023-08"
+  end: "2026-12"
+  highlights:
+    pt:
+      - "**TCC:** *Análise preditiva da popularidade de jogos na Steam utilizando redes neurais*, com orientação do Prof. Dr. João Henrique Ferreira Flores."
+      - "**Assessoria estatística** pelo NAE (Núcleo de Assessoria Estatística), na disciplina de Laboratório 2."
+      - "**Disciplinas com projetos no GitHub:** Inferência, Modelos Lineares, Análise Multivariada, Amostragem, Estatística Espacial e Métodos Computacionais."
+    en:
+      - "**Thesis:** *Predictive analysis of game popularity on Steam using neural networks*, advised by Prof. João Henrique Ferreira Flores, PhD."
+      - "**Statistical consulting** through NAE, the university's statistical consulting unit, as part of the Laboratory 2 course."
+      - "**Courses with projects on GitHub:** Inference, Linear Models, Multivariate Analysis, Sampling, Spatial Statistics and Computational Methods."
+
+photo:
+  jpg: img/palestra-ufrgs.jpg
+  webp: img/palestra-ufrgs.webp
+  width: 1109
+  height: 898
+  alt:
+    pt: Davi, com a camiseta da Estatística UFRGS, apresentando em sala de aula o trabalho sobre o dataset Palmer Penguins
+    en: Davi, wearing a UFRGS Statistics t-shirt, presenting the Palmer Penguins project in class
+  caption:
+    pt: Apresentando o trabalho com o dataset Palmer Penguins na UFRGS.
+    en: Presenting the Palmer Penguins project at UFRGS.
+
+# Cursos: `date` (AAAA-MM) ou `period` (texto livre) são opcionais.
+courses:
+  - title: AI Engineer for Data Scientists Associate
+    org: DataCamp
+    hours: 40
+    date: "2026-07"
+  - title:
+      pt: Data Science, Machine Learning com Python
+      en: Data Science, Machine Learning with Python
+    org: Udemy
+    hours: 21
+  - title:
+      pt: "Formação Cientista de Dados: O Curso Completo"
+      en: "Data Scientist Training: The Complete Course"
+    org: Udemy
+    hours: 21
+  - title:
+      pt: "Estatísticas: conceitos e representações"
+      en: "Statistics: Concepts and Representations"
+    org: IFRS
+    hours: 25
+  - title:
+      pt: Inglês
+      en: English
+    org:
+      pt: Escolas Newpoint
+      en: Newpoint Schools
+    period: 2016–2019

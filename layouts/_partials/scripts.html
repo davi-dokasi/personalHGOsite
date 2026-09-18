@@ -1,0 +1,14 @@
+{{- $main := resources.Get "js/main.js" | minify | fingerprint }}
+<script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" defer></script>
+{{- if .IsHome }}
+{{- $lab := resources.Get "js/lab.js" | minify | fingerprint }}
+<script src="{{ $lab.RelPermalink }}" integrity="{{ $lab.Data.Integrity }}" defer></script>
+{{- end }}
+{{- if or .Params.math .Params.mathjax }}
+{{- with site.Params.katex }}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ .version }}/dist/katex.min.js" integrity="{{ .js }}" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ .version }}/dist/contrib/auto-render.min.js" integrity="{{ .autoRender }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- $math := resources.Get "js/math.js" | minify | fingerprint }}
+<script defer src="{{ $math.RelPermalink }}" integrity="{{ $math.Data.Integrity }}"></script>
+{{- end }}

@@ -1,0 +1,31 @@
+{{- /* Card de post. Contexto: dict "page" (o post) e "heading" (h3/h2). */ -}}
+{{- $p := .page -}}
+{{- $h := .heading | default "h3" -}}
+<article class="post-card" data-reveal>
+  {{- with $p.Params.cover }}{{ with $p.Resources.Get .image }}
+  <a class="post-card__media" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy" decoding="async">
+  </a>
+  {{- end }}{{ end }}
+  <div class="post-card__body">
+    <p class="post-card__meta">
+      <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_medium" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ T "reading_time" $p.ReadingTime }}</span>
+      {{- if ne $p.Language.Lang site.Language.Lang }}<span class="lang-pill" lang="{{ $p.Language.Locale }}">{{ upper $p.Language.Lang }}</span>{{ end }}
+    </p>
+    {{- $hl := "" }}{{ if ne $p.Language.Lang site.Language.Lang }}{{ $hl = $p.Language.Locale }}{{ end }}
+    {{- if eq $h "h2" }}
+    <h2 class="post-card__title"><a href="{{ $p.RelPermalink }}"{{ with $hl }} hreflang="{{ . }}"{{ end }}>{{ $p.Title }}</a></h2>
+    {{- else }}
+    <h3 class="post-card__title"><a href="{{ $p.RelPermalink }}"{{ with $hl }} hreflang="{{ . }}"{{ end }}>{{ $p.Title }}</a></h3>
+    {{- end }}
+    <p class="post-card__desc">{{ $p.Description | default ($p.Summary | plainify | truncate 180) }}</p>
+    {{- with $p.Params.tags }}
+    <ul class="tags">
+      {{- range . }}<li class="tag">{{ . }}</li>{{ end }}
+    </ul>
+    {{- end }}
+    <a class="text-link post-card__cta" href="{{ $p.RelPermalink }}" aria-hidden="true" tabindex="-1">{{ T "read_post" }}{{ partial "icon.html" "arrow-right" }}</a>
+  </div>
+</article>

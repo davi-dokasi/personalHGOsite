@@ -1,0 +1,145 @@
+# Projetos. `featured` aparecem em destaque (com números), `more` em cards menores
+# e `github` na lista compacta "Mais no GitHub".
+# Em `stats`, `value` é numérico para ser formatado no padrão de cada idioma
+# (171.769 em português, 171,769 em inglês).
+
+featured:
+  - title:
+      pt: Popularidade de jogos na Steam
+      en: Predicting game popularity on Steam
+    kicker:
+      pt: TCC · Estatística UFRGS
+      en: Undergraduate thesis · UFRGS
+    status:
+      pt: em andamento
+      en: in progress
+    summary:
+      pt: Pipeline completo, da coleta à modelagem, para prever quantas avaliações um jogo recebe na Steam a partir das suas próprias características, como gênero, preço, plataformas e o texto da descrição.
+      en: An end-to-end pipeline, from data collection to modeling, that predicts how many reviews a Steam game gets from its own characteristics, such as genre, price, platforms and description text.
+    stats:
+      - value: 171769
+        decimals: 0
+        label:
+          pt: apps coletados via Steam Web API
+          en: apps collected from the Steam Web API
+      - value: 0.899
+        decimals: 3
+        prefix: "AUC "
+        label:
+          pt: prever se o jogo recebe avaliação (gradient boosting)
+          en: predicting whether a game gets reviews (gradient boosting)
+    points:
+      pt:
+        - Coleta resiliente com checkpoints atômicos que retoma de onde parou; 118 mil jogos na base curada.
+        - Divisão temporal entre treino e teste e modelo de barreira (hurdle) para os 20,6% de jogos sem nenhuma avaliação.
+        - GLM Poisson contra Binomial Negativa (superdispersão, teste de razão de verossimilhanças). Próxima etapa, uma TextCNN sobre as descrições.
+      en:
+        - Resilient collection with atomic checkpoints that resume where they stopped; 118k games in the curated dataset.
+        - Time-based train/test split and a hurdle model for the 20.6% of games with no reviews at all.
+        - Poisson vs. Negative Binomial GLMs (overdispersion, likelihood-ratio test). Next step, a TextCNN on the game descriptions.
+    tags: [Python, Jupyter, GLM, Gradient Boosting, { pt: Coleta via API, en: API data collection }]
+    links:
+      - kind: code
+        url: https://github.com/davi-dokasi/steam-popularity-prediction
+
+  - title:
+      pt: Encalhes de tartaruga-oliva no litoral gaúcho
+      en: Olive ridley sea turtle strandings in southern Brazil
+    kicker:
+      pt: Assessoria estatística · NAE/UFRGS
+      en: Statistical consulting · NAE/UFRGS
+    summary:
+      pt: Assessoria para uma pesquisa do Ceclimar/UFRGS sobre três décadas de encalhes de *Lepidochelys olivacea* no litoral norte do RS, investigando tendência, sazonalidade, hotspots espaciais e a relação com a temperatura do mar.
+      en: Consulting for a Ceclimar/UFRGS study on three decades of *Lepidochelys olivacea* strandings on the northern coast of Rio Grande do Sul, looking at trend, seasonality, spatial hotspots and the link with sea temperature.
+    stats:
+      - value: 0.59
+        decimals: 2
+        prefix: "τ "
+        label:
+          pt: tendência de alta nos encalhes (Mann-Kendall, p < 0,001)
+          en: upward trend in strandings (Mann-Kendall, p < 0.001)
+      - value: 0.87
+        decimals: 2
+        prefix: "+"
+        suffix: " °C"
+        label:
+          pt: aquecimento da superfície do mar na costa do RS, 1982–2025
+          en: sea surface warming off the RS coast, 1982–2025
+    points:
+      pt:
+        - Tendência com Mann-Kendall, inclinação de Sen e teste de Pettitt, que aponta quebra de patamar em 2011.
+        - Sazonalidade por decomposição clássica (com STL como checagem) e hotspots por estimativa de densidade kernel.
+        - Regressão binomial negativa com anomalia térmica, tudo em relatórios reprodutíveis em R Markdown.
+      en:
+        - Trend analysis with Mann-Kendall, Sen's slope and the Pettitt test, which finds a level shift in 2011.
+        - Seasonality via classical decomposition (checked with STL) and hotspots via kernel density estimation.
+        - Negative binomial regression with thermal anomaly, all in reproducible R Markdown reports.
+    tags: [R, R Markdown, { pt: Séries temporais, en: Time series }, { pt: Estatística espacial, en: Spatial statistics }, leaflet]
+    links:
+      - kind: code
+        url: https://github.com/davi-dokasi/consultoria-tamar
+
+more:
+  - icon: penguin
+    title:
+      pt: "Palmer Penguins: inferência para uma população"
+      en: "Palmer Penguins: one-sample inference"
+    summary:
+      pt: Trabalho em grupo de Introdução à Inferência (UFRGS) com análise descritiva, intervalos de confiança, bootstrap e testes de hipótese, apresentado em Quarto.
+      en: Group project for Introduction to Inference (UFRGS) with descriptive analysis, confidence intervals, bootstrap and hypothesis tests, presented in Quarto.
+    tags: [R, Quarto, Bootstrap]
+    links:
+      - kind: slides
+        url: https://nimrodds.quarto.pub/club-penguin-palmer-penguins/
+      - kind: code
+        url: https://github.com/davi-dokasi/palmer-penguins-research
+
+  - icon: phone
+    title:
+      pt: "Uso de celulares: duas populações"
+      en: "Phone usage: two-sample inference"
+    summary:
+      pt: Comparação de proporções entre duas populações com intervalos de confiança e testes de hipótese, também em R e Quarto.
+      en: Comparing proportions between two populations with confidence intervals and hypothesis tests, also in R and Quarto.
+    tags: [R, Quarto, { pt: Inferência, en: Inference }]
+    links:
+      - kind: slides
+        url: https://nimrodds.quarto.pub/estimativa-de-uso-de-celulares/
+      - kind: code
+        url: https://github.com/davi-dokasi/usabilidade-de-celulares-inferencia
+
+  - icon: text
+    title:
+      pt: Apps de NLP com Streamlit
+      en: NLP apps with Streamlit
+    summary:
+      pt: Dois apps para praticar NLP e deploy. Um faz análise estatística de textos em PDF, DOCX e TXT; o outro gera resumos automáticos.
+      en: Two apps to practice NLP and deployment. One runs statistical text analysis on PDF, DOCX and TXT files; the other generates automatic summaries.
+    tags: [Python, Streamlit, spaCy, TextBlob]
+    links:
+      - kind: code
+        url: https://github.com/davi-dokasi/NLP_app_text_analysis
+        label: { pt: Análise de textos, en: Text analysis }
+      - kind: code
+        url: https://github.com/davi-dokasi/NLP_summarizer
+        label: { pt: Resumos, en: Summarizer }
+
+github:
+  - url: https://github.com/davi-dokasi/Neural-Networks-From-Scratch
+    title: { pt: Redes neurais do zero, en: Neural networks from scratch }
+    desc: { pt: Notas e código em Python puro, en: Notes and pure-Python code }
+  - url: https://github.com/davi-dokasi/Modelos-Lineares
+    title: { pt: Modelos lineares, en: Linear models }
+    desc: { pt: Seminário de regressão múltipla, en: Multiple regression seminar }
+  - url: https://github.com/davi-dokasi/seminario-2--estatistica-espacial
+    title: { pt: Estatística espacial, en: Spatial statistics }
+    desc: { pt: Seminário de geoestatística, en: Geostatistics seminar }
+  - url: https://github.com/davi-dokasi/Regressao-Linear--Predicao-de-Idades-Titanic
+    title: { pt: Idades no Titanic, en: Titanic ages }
+    desc: { pt: Imputação de idades com regressão linear, en: Imputing ages with linear regression }
+  - url: https://github.com/davi-dokasi/python-datascience-datacamp
+    title: { pt: Data science na DataCamp, en: Data science at DataCamp }
+    desc: { pt: Notas e projetos dos cursos, en: Course notes and projects }
+  - url: https://github.com/davi-dokasi/descriptive_wine_analysis
+    title: { pt: Análise de vinhos, en: Wine analysis }
+    desc: { pt: Estatística descritiva em R, en: Descriptive statistics in R }
